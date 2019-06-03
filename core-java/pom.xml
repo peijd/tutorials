@@ -27,7 +27,13 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-    
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>1.5.0-M1</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
     
     <build>
@@ -37,7 +43,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <compilerVersion>11</compilerVersion>
+                    <release>11</release>
                 </configuration>
             </plugin>
         </plugins>
