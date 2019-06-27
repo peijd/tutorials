@@ -22,8 +22,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        
-
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -35,7 +33,6 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-    
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -53,13 +50,6 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.3</version>
         </dependency>
-        <dependency>
-            <groupId>nl.jqno.equalsverifier</groupId>
-            <artifactId>equalsverifier</artifactId>
-            <version>3.1.9</version>
-            <scope>test</scope>
-        </dependency>
-    
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-math3</artifactId>
