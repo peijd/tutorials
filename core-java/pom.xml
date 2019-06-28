@@ -3,18 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>com.ripjava.tutorials</groupId>
     <artifactId>java-core</artifactId>
     <version>1.0-SNAPSHOT</version>
-    
+
     <properties>
         <logback.version>1.2.3</logback.version>
         <junit.version>5.5.0-M1</junit.version>
         <slf4j.version>1.7.26</slf4j.version>
     </properties>
-    
-    
+
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -55,10 +55,15 @@
             <artifactId>commons-math3</artifactId>
             <version>3.6.1</version>
         </dependency>
-
+		<dependency>
+		    <groupId>nl.jqno.equalsverifier</groupId>
+		    <artifactId>equalsverifier</artifactId>
+		    <version>3.1.9</version>
+		    <scope>test</scope>
+		</dependency>
 
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -70,7 +75,7 @@
                 </configuration>
             </plugin>
         </plugins>
-    
+
     </build>
 
 </project>
