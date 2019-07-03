@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>store to xml file</comment>
+<entry key="download">downloadUrl</entry>
+<entry key="name">NewAppName</entry>
+</properties>
