@@ -1,6 +1,5 @@
 package com.ripjava.java.core.shell;
 
-import nl.jqno.equalsverifier.internal.util.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
