@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.io.FileOutputStream;
+import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,6 +20,9 @@ public class PropertiesReloadIntegrationTest {
 
     @Autowired
     EnvironmentConfigBean environmentConfigBean;
+
+    @Autowired
+    Properties properties;
 
     @Test
     public void test_propertiesConfiguration() throws Exception {
@@ -43,6 +47,19 @@ public class PropertiesReloadIntegrationTest {
 
         createConfig("extra2.properties", "application.theme.background", "red");
     }
+
+    @Test
+    public void test_properties() throws Exception {
+        assertEquals("blue", properties.getProperty("application.theme.color"));
+
+        createConfig("extra.properties", "application.theme.color", "red");
+        Thread.sleep(refreshDelay);
+
+        assertEquals("red", properties.getProperty("application.theme.color"));
+
+        createConfig("extra.properties", "application.theme.color", "blue");
+    }
+
 
     public void createConfig(String file, String key, String value) throws Exception {
         FileOutputStream fo = new FileOutputStream(file);
