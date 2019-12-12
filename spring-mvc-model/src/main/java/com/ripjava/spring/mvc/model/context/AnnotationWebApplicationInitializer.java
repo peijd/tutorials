@@ -22,9 +22,10 @@ public class AnnotationWebApplicationInitializer  implements WebApplicationIniti
         root.refresh();
 
         sc.addListener(new ContextLoaderListener(root));
-
+        DispatcherServlet ds = new DispatcherServlet(new GenericWebApplicationContext());
+        ds.setEnableLoggingRequestDetails(true);
         ServletRegistration.Dynamic appServlet =
-                sc.addServlet("mvc", new DispatcherServlet(new GenericWebApplicationContext()));
+                sc.addServlet("mvc", ds);
         appServlet.setLoadOnStartup(1);
         appServlet.addMapping("/");
     }
