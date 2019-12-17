@@ -52,7 +52,7 @@ public class RequestParamController {
                 .collect(Collectors.joining(System.lineSeparator()));
     }
 
-    @RequestMapping("/api/book7")
+    @RequestMapping(value = "/api/book7",produces= "text/plain;charset=UTF-8")
     @ResponseBody
     public String getBooks7(@RequestParam List<String> ids) {
         return  String.join(",", ids);
