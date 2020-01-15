@@ -14,27 +14,61 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 public class ExecutorTest {
-    Article article;
-    Stream<Author> stream;
-    Spliterator<Author> spliterator;
-
-    @BeforeEach
-    public void init() {
-        article = new Article(Arrays.asList(new Author("Ahmad", 0), new Author("Eugen", 0), new Author("Alice", 1),
-                new Author("Alice", 1), new Author("Mike", 0), new Author("Alice", 1), new Author("Mike", 0),
-                new Author("Alice", 1), new Author("Mike", 0), new Author("Alice", 1), new Author("Mike", 0),
-                new Author("Mike", 0), new Author("Alice", 1), new Author("Mike", 0), new Author("Alice", 1),
-                new Author("Mike", 0), new Author("Alice", 1), new Author("Mike", 0), new Author("Alice", 1),
-                new Author("Mike", 0), new Author("Michał", 0), new Author("Loredana", 1)), 0);
-        stream = article.getListOfAuthors().stream();
-
-        spliterator = new RelatedAuthorSpliterator(article.getListOfAuthors());
-    }
-
     @Test
-    public void givenAstreamOfAuthors_whenProcessedInParallelWithCustomSpliterator_coubtProducessRightOutput() {
+    public void test_countAuthorsWithSpliterator() {
+        Article article = new Article(Arrays.asList(new Author("Ahmad", 0),
+                new Author("a", 0),
+                new Author("b", 1),
+                new Author("c", 1),
+                new Author("d", 0),
+                new Author("e", 1),
+                new Author("f", 0),
+                new Author("g", 1),
+                new Author("h", 0),
+                new Author("i", 1),
+                new Author("g", 0),
+                new Author("k", 0),
+                new Author("l", 1),
+                new Author("m", 0),
+                new Author("n", 1),
+                new Author("p", 0),
+                new Author("q", 1),
+                new Author("r", 0),
+                new Author("s", 1),
+                new Author("t", 0),
+                new Author("r", 0),
+                new Author("s", 1)), 0);
+        Stream<Author> stream = article.getListOfAuthors().stream();
+        Spliterator<Author> spliterator = new RelatedAuthorSpliterator(article.getListOfAuthors());
         Stream<Author> stream2 = StreamSupport.stream(spliterator, true);
-        assertThat(Executor.countAutors(stream2.parallel()), equalTo(9));
+        assertThat(Executor.countAuthors(stream2.parallel()), equalTo(9));
+    }
+    @Test
+    public  void test_countAuthors(){
+        Article article = new Article(Arrays.asList(new Author("Ahmad", 0),
+                new Author("a", 0),
+                new Author("b", 1),
+                new Author("c", 1),
+                new Author("d", 0),
+                new Author("e", 1),
+                new Author("f", 0),
+                new Author("g", 1),
+                new Author("h", 0),
+                new Author("i", 1),
+                new Author("g", 0),
+                new Author("k", 0),
+                new Author("l", 1),
+                new Author("m", 0),
+                new Author("n", 1),
+                new Author("p", 0),
+                new Author("q", 1),
+                new Author("r", 0),
+                new Author("s", 1),
+                new Author("t", 0),
+                new Author("r", 0),
+                new Author("s", 1)), 0);
+        Stream<Author> stream = article.getListOfAuthors().stream();
+        assertThat(Executor.countAuthors(stream), equalTo(9));
     }
 
     @Test
