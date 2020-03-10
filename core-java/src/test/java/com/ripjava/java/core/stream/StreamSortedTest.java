@@ -40,7 +40,7 @@ public class StreamSortedTest {
         System.out.println("---Sort by Map Value---");
         // Sort by Map Value
         map.entrySet().stream().sorted(Map.Entry.comparingByValue())
-                .forEach( e -> System.out.println("Key: " +((Map.Entry<Integer, Book>)e).getKey() + ", value: (" + ((Map.Entry<Integer, Book>)e).getValue() + ")"));
+                .forEach( e -> System.out.println("Key: " +e.getKey() + ", value: (" + e.getValue() + ")"));
     }
 
 }

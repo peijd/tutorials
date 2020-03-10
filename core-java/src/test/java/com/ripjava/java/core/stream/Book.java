@@ -2,7 +2,7 @@ package com.ripjava.java.core.stream;
 
 import java.util.Objects;
 
-public class Book implements Comparable{
+public class Book implements Comparable<Book>{
     private  String name;
     private  int pages;
 
@@ -42,8 +42,8 @@ public class Book implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        if (o == null || getClass() != o.getClass()) return  1;
+    public int compareTo(Book o) {
+        if (o == null) return  1;
         Book book = (Book) o;
         int result = name.compareTo(book.getName());
         if(result == 0){
