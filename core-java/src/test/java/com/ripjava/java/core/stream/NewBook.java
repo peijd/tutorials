@@ -2,11 +2,12 @@ package com.ripjava.java.core.stream;
 
 import java.util.Objects;
 
-public class Book implements Comparable<Book>{
+public class NewBook implements Comparable<NewBook>{
     private  String name;
     private  int pages;
+    private  int price;
 
-    public Book(String name, int pages){
+    public NewBook(String name, int pages){
         this.name = name;
         this.pages = pages;
     }
@@ -31,7 +32,7 @@ public class Book implements Comparable<Book>{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
+        NewBook book = (NewBook) o;
         return pages == book.pages &&
                 Objects.equals(name, book.name);
     }
@@ -42,22 +43,37 @@ public class Book implements Comparable<Book>{
     }
 
     @Override
-    public int compareTo(Book o) {
+    public int compareTo(NewBook o) {
         if (o == null) return  1;
-        Book book = (Book) o;
+        NewBook book = (NewBook) o;
         int result = name.compareTo(book.getName());
         if(result == 0){
-            return  pages - ((Book) o).pages;
+            return  pages - ((NewBook) o).pages;
         } else {
             return result;
         }
     }
 
+    public NewBook(String name, int pages, int price) {
+        this.name = name;
+        this.pages = pages;
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
-        return "Book{" +
+        return "NewBook{" +
                 "name='" + name + '\'' +
                 ", pages=" + pages +
+                ", price=" + price +
                 '}';
     }
 }
