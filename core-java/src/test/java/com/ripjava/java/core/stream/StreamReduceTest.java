@@ -3,6 +3,7 @@ package com.ripjava.java.core.stream;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class StreamReduceTest {
 
@@ -25,6 +26,19 @@ public class StreamReduceTest {
         sum =  Arrays.stream(array).reduce(start, StreamReduceTest::addIntData);
         System.out.println(sum);
     }
+
+    @Test
+    public void test_StreamReduceWithCombiner(){
+        List<Integer> array = Arrays.asList(1,2,3,4,5);
+        int start = 100;
+        int sum =  array.parallelStream().reduce(start, (x, y) -> x + y, (p, q) -> p + q);
+        System.out.println(sum);
+        start = 0;
+        int sum2 =  array.parallelStream().reduce(start, (x, y) -> x + y, (p, q) -> p + q);
+        System.out.println(sum2);
+
+    }
+
 
 
     public static int addIntData(int num1, int num2) {
