@@ -11,4 +11,8 @@ public class City {
     public City() {
         System.out.println("City bean initialized");
     }
+
+    public void test(){
+        System.out.println("test");
+    }
 }

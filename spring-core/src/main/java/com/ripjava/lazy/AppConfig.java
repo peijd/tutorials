@@ -5,12 +5,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 
-@Lazy
+//@Lazy
 @Configuration
 @ComponentScan(basePackages = "com.ripjava.lazy")
 public class AppConfig {
 
     @Bean
+    @Lazy(true)
     public Region getRegion(){
         return new Region();
     }
