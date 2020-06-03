@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="indexService"
+            class="com.ripjava.xmlbase.IndexService"/>
+    
+    <bean id="indexApp"
+          class="com.ripjava.xmlbase.IndexApp">
+        <property name="service" ref="indexService"/>
+    </bean>
+    
+    <bean id="indexApp2"
+            class="com.ripjava.xmlbase.IndexApp">
+        <constructor-arg ref="indexService" />
+    </bean>
+    
+    
+    <bean id="indexService3" class="com.ripjava.xmlbase.StaticServiceFactory" factory-method="getService">
+        <constructor-arg value="1" />
+    </bean>
+    <bean id="indexApp3"
+          class="com.ripjava.xmlbase.IndexApp">
+        <property name="service" ref="indexService3"/>
+    </bean>
+    
+    <bean id="indexServiceFactory"
+          class="com.ripjava.xmlbase.InstanceServiceFactory" />
+    <bean id="indexService4"
+          class="com.ripjava.xmlbase.InstanceServiceFactory"
+          factory-method="getService" factory-bean="indexServiceFactory">
+        <constructor-arg value="1" />
+    </bean>
+    <bean id="indexApp4" class="com.ripjava.xmlbase.IndexApp">
+        <property name="service" ref="indexService4" />
+    </bean>
+</beans>
