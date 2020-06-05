@@ -6,3 +6,5 @@
 - [Spring StreamUtils简介](https://www.ripjava.com/article/1350354451038240)
 
 - [Spring 基于XML的依赖注入](https://www.ripjava.com/article/1351606945710112)
+
+- [Spring中的BeanNameAware和BeanFactoryAware接口](https://www.ripjava.com/article/1351981669023776)
