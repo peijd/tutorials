@@ -18,3 +18,7 @@
 - [Spring 标准应用上下文事件](https://www.ripjava.com/article/1352530940395552)
 
 - [什么是Spring Bean？](https://www.ripjava.com/article/1352703433244704)
+
+- [Spring @PostConstruct和@PreDestroy注解](https://www.ripjava.com/article/1352716083265568)
+
+- [Spring 在抽象类中使用@Autowired](https://www.ripjava.com/article/1352897889566752)
