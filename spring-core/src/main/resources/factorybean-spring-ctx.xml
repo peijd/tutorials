@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!---->
+    <bean id="MyBean" class="com.ripjava.factorybean.MyFactoryBean">
+        <property name="factoryId" value="9999"/>
+        <property name="beanId" value="1"/>
+    </bean>
+    
+    <bean id="singleTool" class="com.ripjava.factorybean.SingleBeanFactory">
+        <property name="factoryId" value="7777"/>
+        <property name="beanId" value="3"/>
+    </bean>
+    
+    <bean id="nonSingleTool" class="com.ripjava.factorybean.NonSingleBeanFactory">
+        <property name="factoryId" value="6666"/>
+        <property name="beanId" value="4"/>
+    </bean>
+</beans>

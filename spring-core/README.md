@@ -22,3 +22,8 @@
 - [Spring @PostConstruct和@PreDestroy注解](https://www.ripjava.com/article/1352716083265568)
 
 - [Spring 在抽象类中使用@Autowired](https://www.ripjava.com/article/1352897889566752)
+
+- [Spring 理解getBean方法](https://www.ripjava.com/article/1353081658802208)
+
+- [Spring BeanFactory简介](https://www.ripjava.com/article/1353262464761888)
+
