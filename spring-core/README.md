@@ -27,3 +27,7 @@
 
 - [Spring BeanFactory简介](https://www.ripjava.com/article/1353262464761888)
 
+- [Spring 如何使用FactoryBean](https://www.ripjava.com/article/1353800151466016)
+
+- [Spring 注入Java集合](https://www.ripjava.com/article/1353979587985440)
+
