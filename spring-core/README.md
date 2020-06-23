@@ -31,3 +31,6 @@
 
 - [Spring 注入Java集合](https://www.ripjava.com/article/1353979587985440)
 
+- [Spring 为静态字段中注入值](https://www.ripjava.com/article/1354147475488800)
+
+- [Spring注解 @Import 简介](https://www.ripjava.com/article/1354526640570400)
