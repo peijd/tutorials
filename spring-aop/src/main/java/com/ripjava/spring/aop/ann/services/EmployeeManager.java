@@ -1,4 +1,4 @@
-package com.ripjava.spring.aop.ann.aspectj;
+package com.ripjava.spring.aop.ann.services;
 
 import org.springframework.stereotype.Component;
 

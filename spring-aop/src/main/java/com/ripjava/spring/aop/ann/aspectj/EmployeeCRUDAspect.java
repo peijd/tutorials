@@ -9,25 +9,25 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class EmployeeCRUDAspect {
-    @Before("execution(* com.ripjava.spring.aop.ann.aspectj.EmployeeManager.getEmployeeById(..))")
+    @Before("execution(* com.ripjava.spring.aop.ann.services.EmployeeManager.getEmployeeById(..))")
     public void logBeforeV1(JoinPoint joinPoint)
     {
         System.out.println("EmployeeCRUDAspect.logBeforeV1() : " + joinPoint.getSignature().getName());
     }
 
-    @Before("execution(* com.ripjava.spring.aop.ann.aspectj.EmployeeManager.*(..))")
+    @Before("execution(* com.ripjava.spring.aop.ann.services.EmployeeManager.*(..))")
     public void logBeforeV2(JoinPoint joinPoint)
     {
         System.out.println("EmployeeCRUDAspect.logBeforeV2() : " + joinPoint.getSignature().getName());
     }
 
-    @After("execution(* com.ripjava.spring.aop.ann.aspectj.EmployeeManager.getEmployeeById(..))")
+    @After("execution(* com.ripjava.spring.aop.ann.services.EmployeeManager.getEmployeeById(..))")
     public void logAfterV1(JoinPoint joinPoint)
     {
         System.out.println("EmployeeCRUDAspect.logAfterV1() : " + joinPoint.getSignature().getName());
     }
 
-    @After("execution(* com.ripjava.spring.aop.ann.aspectj.EmployeeManager.*(..))")
+    @After("execution(* com.ripjava.spring.aop.ann.services.EmployeeManager.*(..))")
     public void logAfterV2(JoinPoint joinPoint)
     {
         System.out.println("EmployeeCRUDAspect.logAfterV2() : " + joinPoint.getSignature().getName());

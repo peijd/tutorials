@@ -1,4 +1,4 @@
-package com.ripjava.spring.aop.ann.aspectj;
+package com.ripjava.spring.aop.ann.services;
 
 public class EmployeeDTO {
     private Integer id;

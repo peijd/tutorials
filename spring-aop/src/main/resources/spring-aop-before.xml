@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd ">
+    
+    <aop:config>
+        <aop:aspect ref="loggingAspect">
+            <aop:pointcut expression="execution(* com.ripjava.spring.aop.ann.services.EmployeeManager.*(..))"
+                          id="loggingAllMethodsPointcuts"/>
+            <aop:pointcut expression="execution(* com.ripjava.spring.aop.ann.services.EmployeeManager.getEmployeeById(..))"
+                          id="loggingGetEmployeeByIdPointcuts"/>
+            <!-- 前置通知 -->
+            <aop:before method="logBeforeAllMethods" pointcut-ref="loggingAllMethodsPointcuts" />
+            <aop:before method="logBeforeGetEmployee" pointcut-ref="loggingGetEmployeeByIdPointcuts" />
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="employeeManager" class="com.ripjava.spring.aop.ann.services.EmployeeManager" />
+    
+    <bean id="loggingAspect" class="com.ripjava.spring.aop.ann.before.LogAspect" />
+
+</beans>
