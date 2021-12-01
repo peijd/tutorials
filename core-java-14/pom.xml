@@ -17,8 +17,9 @@
                     <source>14</source>
                     <target>14</target>
                     <compilerArgs>
-<!--                        <arg>-verbose</arg>-->
+                        <arg>--enable-preview</arg>
                         <arg>-Xlint:serial</arg>
+                        <arg>-Xlint:preview</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
